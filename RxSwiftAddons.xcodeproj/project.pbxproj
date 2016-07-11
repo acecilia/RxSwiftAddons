@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		41973FE41D343F5800C3B95B /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41973FE31D343F5800C3B95B /* TwoWayBinding.swift */; };
 		41973FE51D343F5800C3B95B /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41973FE31D343F5800C3B95B /* TwoWayBinding.swift */; };
+		41973FF01D344D4800C3B95B /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41973FE31D343F5800C3B95B /* TwoWayBinding.swift */; };
 		41A869501D340E1300F6F2A7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A8694F1D340E1300F6F2A7 /* RxSwift.framework */; };
 		41A869521D340E2B00F6F2A7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A869511D340E2A00F6F2A7 /* RxSwift.framework */; };
 		41A869551D340E3900F6F2A7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A869531D340E3800F6F2A7 /* RxCocoa.framework */; };
@@ -648,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41973FF01D344D4800C3B95B /* TwoWayBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

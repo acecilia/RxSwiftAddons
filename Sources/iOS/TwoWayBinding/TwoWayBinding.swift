@@ -12,6 +12,7 @@ import Foundation
     import RxCocoa
 #endif
 
+#if os(iOS) || os(tvOS)
 infix operator <-> {
 }
 
@@ -136,3 +137,4 @@ public extension ObservableType where Self:protocol<ObserverType> {
         return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
     }
 }
+#endif
