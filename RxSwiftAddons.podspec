@@ -24,5 +24,6 @@ s.watchos.source_files  = 'Sources/iOS/**/*.swift'
 s.tvos.source_files     = 'Sources/iOS/**/*.swift'
 
 s.dependency 'RxSwift', '~> 2.5'
+s.dependency 'RxCocoa', '~> 2.5'
 
 end
