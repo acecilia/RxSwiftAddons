@@ -6,6 +6,8 @@
 //  Copyright © 2016 Andrés Cecilia. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 //! Project version number for RxSwiftAddons.
 FOUNDATION_EXPORT double RxSwiftAddonsVersionNumber;
 
