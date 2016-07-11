@@ -7,13 +7,11 @@
 //
 
 import Foundation
+import UIKit
 #if !RX_NO_MODULE
     import RxSwift
     import RxCocoa
 #endif
-
-import UIKit
-
 
 infix operator <-> {
 }
@@ -31,64 +29,111 @@ private func nonMarkedText(textInput: UITextInput) -> String? {
         return text
     }
     
-    guard let startRange = textInput.textRangeFromPosition(start, toPosition: markedTextRange.start),
-        endRange = textInput.textRangeFromPosition(markedTextRange.end, toPosition: end) else {
+    guard let startRange = textInput.textRangeFromPosition(start, toPosition: markedTextRange.start), endRange = textInput.textRangeFromPosition(markedTextRange.end, toPosition: end) else {
             return text
     }
     
     return (textInput.textInRange(startRange) ?? "") + (textInput.textInRange(endRange) ?? "")
 }
 
-public func <-> (textInput: RxTextInput, variable: Variable<String>) -> Disposable {
-    let bindToUIDisposable = variable.asObservable()
-        .bindTo(textInput.rx_text)
-    let bindToVariable = textInput.rx_text
-        .subscribe(onNext: { [weak textInput] n in
-            guard let textInput = textInput else {
-                return
-            }
-            
-            let nonMarkedTextValue = nonMarkedText(textInput)
-            
-            /**
-             In some cases `textInput.textRangeFromPosition(start, toPosition: end)` will return nil even though the underlying
-             value is not nil. This appears to be an Apple bug. If it's not, and we are doing something wrong, please let us know.
-             The can be reproed easily if replace bottom code with
-             
-             if nonMarkedTextValue != variable.value {
-             variable.value = nonMarkedTextValue ?? ""
-             }
-             and you hit "Done" button on keyboard.
-             */
-            if let nonMarkedTextValue = nonMarkedTextValue where nonMarkedTextValue != variable.value {
-                variable.value = nonMarkedTextValue
-            }
-            }, onCompleted:  {
-                bindToUIDisposable.dispose()
-        })
-    
-    return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
-}
-
-func <-> <T>(property: ControlProperty<T>, variable: Variable<T>) -> Disposable {
-    if T.self == String.self {
-        #if DEBUG
-            fatalError("It is ok to delete this message, but this is here to warn that you are maybe trying to bind to some `rx_text` property directly to variable.\n" +
-                "That will usually work ok, but for some languages that use IME, that simplistic method could cause unexpected issues because it will return intermediate results while text is being inputed.\n" +
-                "REMEDY: Just use `textField <-> variable` instead of `textField.rx_text <-> variable`.\n" +
-                "Find out more here: https://github.com/ReactiveX/RxSwift/issues/649\n"
-            )
-        #endif
+extension RxTextInput {
+    func twoWayDrive<S:protocol<SubjectType, ObserverType> where S.E == String>(subject:S) -> Disposable {
+        return twoWayBinding(subject,
+                             bindToUI: { $0.asDriver(onErrorDriveWith: Driver.never()).drive($1.rx_text) },
+                             setValueFromUI: { $0.onNext($1) })
     }
     
-    let bindToUIDisposable = variable.asObservable()
-        .bindTo(property)
-    let bindToVariable = property
-        .subscribe(onNext: { n in
-            variable.value = n
-            }, onCompleted:  {
+    func twoWayDrive(variable:Variable<String>) -> Disposable {
+        return twoWayBinding(variable,
+                             bindToUI: { $0.asDriver().drive($1.rx_text) },
+                             setValueFromUI: { $0.value = $1 })
+    }
+    
+    func twoWayBindTo<S:protocol<SubjectType, ObserverType> where S.E == String>(subject:S) -> Disposable {
+        return twoWayBinding(subject,
+                             bindToUI: { $0.asObservable().bindTo($1.rx_text) },
+                             setValueFromUI: { $0.onNext($1) })
+    }
+    
+    func twoWayBindTo(variable:Variable<String>) -> Disposable {
+        return twoWayBinding(variable,
+                             bindToUI: { $0.asObservable().bindTo($1.rx_text) },
+                             setValueFromUI: { $0.value = $1 })
+    }
+    
+    public func twoWayBinding<T>(object:T, bindToUI:(T, Self)->(Disposable), setValueFromUI:(T, String)->()) -> Disposable {
+        let bindToUIDisposable = bindToUI(object, self)
+        let bindToVariable = self.rx_text
+            .subscribe(onNext: { [weak self] n in
+                guard let textInput = self else { return }
+                let nonMarkedTextValue = nonMarkedText(textInput)
+                
+                /*
+                 In some cases `textInput.textRangeFromPosition(start, toPosition: end)` will return nil even though the underlying
+                 value is not nil. This appears to be an Apple bug. If it's not, and we are doing something wrong, please let us know.
+                 The can be reproed easily if replace bottom code with
+                 
+                 if nonMarkedTextValue != variable.value {
+                 variable.value = nonMarkedTextValue ?? ""
+                 }
+                 and you hit "Done" button on keyboard.
+                 */
+                
+                if let nonMarkedTextValue = nonMarkedTextValue {
+                    setValueFromUI(object, nonMarkedTextValue)
+                }
+                }, onCompleted:  {
+                    bindToUIDisposable.dispose()
+            })
+        
+        return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
+    }
+}
+
+public extension ObservableType where Self:protocol<ObserverType> {
+    func twoWayDrive<S:protocol<SubjectType, ObserverType> where S.E == E>(subject:S) -> Disposable {
+        return twoWayBinding(subject,
+                             bindToUI: { $0.asDriver(onErrorDriveWith: Driver.never()).drive($1) },
+                             setValueFromUI: { $0.onNext($1) })
+    }
+    
+    func twoWayDrive(variable:Variable<E>) -> Disposable {
+        return twoWayBinding(variable,
+                             bindToUI: { $0.asDriver().drive($1) },
+                             setValueFromUI: { $0.value = $1 })
+    }
+    
+    func twoWayBindTo<S:protocol<SubjectType, ObserverType> where S.E == E>(subject:S) -> Disposable {
+        return twoWayBinding(subject,
+                             bindToUI: { $0.asObservable().bindTo($1) },
+                             setValueFromUI: { $0.onNext($1) })
+    }
+    
+    func twoWayBindTo(variable:Variable<E>) -> Disposable {
+        return twoWayBinding(variable,
+                             bindToUI: { $0.asObservable().bindTo($1) },
+                             setValueFromUI: { $0.value = $1 })
+    }
+    
+    func twoWayBinding<T>(object:T, bindToUI:(T, Self)->(Disposable), setValueFromUI:(T, E)->()) -> Disposable {
+        if E.self == String.self {
+            #if DEBUG
+                fatalError("It is ok to delete this message, but this is here to warn that you are maybe trying to bind to some `rx_text` property directly to variable.\n" +
+                    "That will usually work ok, but for some languages that use IME, that simplistic method could cause unexpected issues because it will return intermediate results while text is being inputed.\n" +
+                    "REMEDY: Just use `textField <-> variable` instead of `textField.rx_text <-> variable`.\n" +
+                    "Find out more here: https://github.com/ReactiveX/RxSwift/issues/649\n"
+                )
+            #endif
+        }
+        
+        let bindToUIDisposable = bindToUI(object, self)
+        let bindToVariable = self.subscribe(
+            onNext: {
+                setValueFromUI(object, $0)
+            },onCompleted:  {
                 bindToUIDisposable.dispose()
         })
-    
-    return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
+        
+        return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
+    }
 }
