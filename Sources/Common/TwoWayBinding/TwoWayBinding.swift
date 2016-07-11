@@ -2,8 +2,8 @@
 //  TwoWayBinding.swift
 //  RxSwiftAddons
 //
-//  Created by Krunoslav Zaher and Andres on 11/7/16.
-//  Copyright © 2016 Károly Lőrentey. All rights reserved.
+//  Created by Krunoslav Zaher and Andrés Cecilia on 11/7/16.
+//  Copyright © 2016 Andrés Cecilia. All rights reserved.
 //
 
 import Foundation
