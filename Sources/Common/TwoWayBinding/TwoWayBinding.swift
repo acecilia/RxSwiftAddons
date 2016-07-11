@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 #if !RX_NO_MODULE
     import RxSwift
     import RxCocoa
@@ -16,7 +15,7 @@ import UIKit
 infix operator <-> {
 }
 
-private func nonMarkedText(textInput: UITextInput) -> String? {
+private func nonMarkedText(textInput: RxTextInput) -> String? {
     let start = textInput.beginningOfDocument
     let end = textInput.endOfDocument
     
