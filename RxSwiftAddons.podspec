@@ -17,12 +17,9 @@ s.osx.deployment_target = '10.10'
 s.watchos.deployment_target = '2.0'
 s.tvos.deployment_target = '9.0'
 
-s.source_files          = 'Sources/RxSwiftAddons.h'
-#Uncomment when the Sources/Common folder became non empty
-#, 'Sources/Common/**/*.{swift,h,m}'
+s.source_files          = 'Sources/RxSwiftAddons.h', 'Sources/Common/**/*.{swift,h,m}'
 s.ios.source_files      = 'Sources/iOS/**/*.swift'
-#Uncomment when the Sources/OSX folder became non empty
-#s.osx.source_files      = 'Sources/OSX/**/*.swift'
+s.osx.source_files      = 'Sources/OSX/**/*.swift'
 s.watchos.source_files  = 'Sources/iOS/**/*.swift'
 s.tvos.source_files     = 'Sources/iOS/**/*.swift'
 
