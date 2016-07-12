@@ -17,3 +17,7 @@ fi
 if [ -n "$TVOS_DEPLOYMENT_TARGET" ]; then
 find "${SRCROOT}/RxSwiftAddons.podspec" -exec sed -i '' -e "s/s\.tvos\.deployment_target = .*/s.tvos.deployment_target = \'$TVOS_DEPLOYMENT_TARGET\'/g" {} \;
 fi
+
+if [ -n "$VERSION_STRING" ]; then
+find "${SRCROOT}/RxSwiftAddons.podspec" -exec sed -i '' -e "s/s.version          = .*/s.version          = \"$VERSION_STRING\"/g" {} \;
+fi
