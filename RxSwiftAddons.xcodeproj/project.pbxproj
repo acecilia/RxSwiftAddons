@@ -70,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		4121BACA1D3450B200E41EC6 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
+		41986B381D34779E000476A9 /* postBuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postBuild.sh; sourceTree = "<group>"; };
 		41A869441D340B9600F6F2A7 /* RxSwiftAddons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxSwiftAddons.podspec; sourceTree = "<group>"; };
 		41A869451D340B9600F6F2A7 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		41A869461D340C4400F6F2A7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 				BBB55AB31C8F80020050DDA9 /* Products */,
 				BBB55AB41C8F80020050DDA9 /* Sources */,
 				BBB55AC01C8F80020050DDA9 /* Tests */,
+				41986B381D34779E000476A9 /* postBuild.sh */,
 				41A869461D340C4400F6F2A7 /* .gitignore */,
 				41A869451D340B9600F6F2A7 /* Cartfile */,
 				BBB55AB71C8F80020050DDA9 /* Info.plist */,
@@ -338,6 +340,7 @@
 				BBB55AAF1C8F80020050DDA9 /* Headers */,
 				BBB55AB01C8F80020050DDA9 /* Resources */,
 				41A869691D340FA600F6F2A7 /* Run Script */,
+				41986B391D3477C7000476A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -375,6 +378,7 @@
 				BBB55AD11C8F88F20050DDA9 /* Headers */,
 				BBB55AD21C8F88F20050DDA9 /* Resources */,
 				41A869641D340F4200F6F2A7 /* CopyFiles */,
+				41986B3A1D34787F000476A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -412,6 +416,7 @@
 				BBB55AEE1C8F8BE00050DDA9 /* Headers */,
 				BBB55AEF1C8F8BE00050DDA9 /* Resources */,
 				41A8696A1D340FE900F6F2A7 /* ShellScript */,
+				41986B3B1D347884000476A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -431,6 +436,7 @@
 				BBB55AFB1C8F8CBB0050DDA9 /* Headers */,
 				BBB55AFC1C8F8CBB0050DDA9 /* Resources */,
 				41A8696B1D340FEE00F6F2A7 /* ShellScript */,
+				41986B3C1D34788E000476A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -568,6 +574,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		41986B391D3477C7000476A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./postBuild.sh;
+		};
+		41986B3A1D34787F000476A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./postBuild.sh;
+		};
+		41986B3B1D347884000476A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./postBuild.sh;
+		};
+		41986B3C1D34788E000476A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./postBuild.sh;
+		};
 		41A869691D340FA600F6F2A7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
