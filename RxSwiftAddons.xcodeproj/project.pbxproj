@@ -101,7 +101,7 @@
 
 /* Begin PBXFileReference section */
 		4121BACA1D3450B200E41EC6 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
-		41986B381D34779E000476A9 /* postBuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postBuild.sh; sourceTree = "<group>"; };
+		41986B381D34779E000476A9 /* PostBuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = PostBuild.sh; sourceTree = "<group>"; };
 		41A869441D340B9600F6F2A7 /* RxSwiftAddons.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxSwiftAddons.podspec; sourceTree = "<group>"; };
 		41A869451D340B9600F6F2A7 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		41A869461D340C4400F6F2A7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 		41F62F161D3506630090C5CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		41F62F1C1D3506AB0090C5CE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		41F62F1D1D3506AB0090C5CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		41F62F261D350A4A0090C5CE /* Setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Setup.sh; sourceTree = "<group>"; };
 		BBB55AB21C8F80020050DDA9 /* RxSwiftAddons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftAddons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB55AB71C8F80020050DDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBB55ABC1C8F80020050DDA9 /* RxSwiftAddons-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwiftAddons-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,21 +291,21 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = watchOS;
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 		41F62F241D3508600090C5CE /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = tvOS;
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		41F62F251D3508870090C5CE /* iOS-watchOS-tvOS */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "iOS-watchOS-tvOS";
+			path = "iOS-watchOS-tvOS";
 			sourceTree = "<group>";
 		};
 		BBB55AA81C8F80020050DDA9 = {
@@ -314,7 +315,6 @@
 				BBB55AB31C8F80020050DDA9 /* Products */,
 				BBB55AB41C8F80020050DDA9 /* Sources */,
 				BBB55AC01C8F80020050DDA9 /* Tests */,
-				41986B381D34779E000476A9 /* postBuild.sh */,
 				41A869461D340C4400F6F2A7 /* .gitignore */,
 				41A869451D340B9600F6F2A7 /* Cartfile */,
 				41F62F131D34FB320090C5CE /* Cartfile.private */,
@@ -322,6 +322,8 @@
 				BBB55B1D1C8F9E850050DDA9 /* LICENCE.md */,
 				BBB55B1E1C8F9E920050DDA9 /* README.md */,
 				41A869441D340B9600F6F2A7 /* RxSwiftAddons.podspec */,
+				41986B381D34779E000476A9 /* PostBuild.sh */,
+				41F62F261D350A4A0090C5CE /* Setup.sh */,
 				BBB55ACC1C8F80660050DDA9 /* version.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -344,11 +346,11 @@
 			isa = PBXGroup;
 			children = (
 				41A8696E1D34255700F6F2A7 /* Common */,
-				41F62F251D3508870090C5CE /* iOS-watchOS-tvOS */,
 				41A869701D34256900F6F2A7 /* OSX */,
 				41A8696F1D34256400F6F2A7 /* iOS */,
-				41F62F231D3508560090C5CE /* watchOS */,
+				41F62F251D3508870090C5CE /* iOS-watchOS-tvOS */,
 				41F62F241D3508600090C5CE /* tvOS */,
+				41F62F231D3508560090C5CE /* watchOS */,
 				41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */,
 			);
 			path = Sources;
@@ -657,7 +659,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./postBuild.sh;
+			shellScript = ./PostBuild.sh;
 		};
 		41986B3A1D34787F000476A9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -670,7 +672,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./postBuild.sh;
+			shellScript = ./PostBuild.sh;
 		};
 		41986B3B1D347884000476A9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -683,7 +685,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./postBuild.sh;
+			shellScript = ./PostBuild.sh;
 		};
 		41986B3C1D34788E000476A9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -696,7 +698,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ./postBuild.sh;
+			shellScript = ./PostBuild.sh;
 		};
 		41A869691D340FA600F6F2A7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
