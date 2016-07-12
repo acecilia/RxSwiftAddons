@@ -105,10 +105,6 @@ public func twoWayBinding<S, P:protocol<ObservableType, ObserverType>>(subject: 
     return StableCompositeDisposable.create(bindToUIDisposable, bindToVariable)
 }
 
-
-
-
-
 #if os(iOS) || os(tvOS)
     public extension SubjectType where Self:protocol<ObserverType>, E == String {
         /**
