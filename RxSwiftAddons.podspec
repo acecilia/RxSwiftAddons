@@ -18,10 +18,10 @@ s.watchos.deployment_target = '2.0'
 s.tvos.deployment_target = '9.0'
 
 s.source_files          = 'Sources/RxSwiftAddons.h', 'Sources/Common/**/*.{swift,h,m}'
-s.ios.source_files      = 'Sources/iOS/**/*.swift', 'Sources/iOS-watchOS-tvOS/**/*.swift'
+s.ios.source_files      = 'Sources/iOS/**/*.swift', 'Sources/Common-iOS-watchOS-tvOS/**/*.swift'
 s.osx.source_files      = 'Sources/OSX/**/*.swift'
-s.watchos.source_files  = 'Sources/watchOS/**/*.swift', 'Sources/iOS-watchOS-tvOS/**/*.swift'
-s.tvos.source_files     = 'Sources/tvOS/**/*.swift', 'Sources/iOS-watchOS-tvOS/**/*.swift'
+s.watchos.source_files  = 'Sources/watchOS/**/*.swift', 'Sources/Common-iOS-watchOS-tvOS/**/*.swift'
+s.tvos.source_files     = 'Sources/tvOS/**/*.swift', 'Sources/Common-iOS-watchOS-tvOS/**/*.swift'
 
 s.dependency 'RxSwift', '~> 2.5'
 s.dependency 'RxCocoa', '~> 2.5'
