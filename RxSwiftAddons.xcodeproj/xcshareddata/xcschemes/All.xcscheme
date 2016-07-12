@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BBB55AD31C8F88F20050DDA9"
                BuildableName = "RxSwiftAddons.framework"
-               BlueprintName = "OS X"
+               BlueprintName = "OSX"
                ReferencedContainer = "container:RxSwiftAddons.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BBB55ADC1C8F88F20050DDA9"
                BuildableName = "RxSwiftAddons-Test.xctest"
-               BlueprintName = "OS X Tests"
+               BlueprintName = "OSX Tests"
                ReferencedContainer = "container:RxSwiftAddons.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -118,7 +118,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBB55AD31C8F88F20050DDA9"
             BuildableName = "RxSwiftAddons.framework"
-            BlueprintName = "OS X"
+            BlueprintName = "OSX"
             ReferencedContainer = "container:RxSwiftAddons.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -140,7 +140,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBB55AD31C8F88F20050DDA9"
             BuildableName = "RxSwiftAddons.framework"
-            BlueprintName = "OS X"
+            BlueprintName = "OSX"
             ReferencedContainer = "container:RxSwiftAddons.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -158,7 +158,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBB55AD31C8F88F20050DDA9"
             BuildableName = "RxSwiftAddons.framework"
-            BlueprintName = "OS X"
+            BlueprintName = "OSX"
             ReferencedContainer = "container:RxSwiftAddons.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

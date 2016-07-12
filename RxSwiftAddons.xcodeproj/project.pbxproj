@@ -25,6 +25,15 @@
 		41DE9B231D342D5B00BAD497 /* RxSwiftAddons.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41DE9B241D342D5B00BAD497 /* RxSwiftAddons.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41DE9B251D342D5C00BAD497 /* RxSwiftAddons.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41F62F141D34FB320090C5CE /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 41F62F131D34FB320090C5CE /* Cartfile.private */; };
+		41F62F171D3506630090C5CE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F62F151D3506630090C5CE /* Nimble.framework */; };
+		41F62F181D3506630090C5CE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F62F161D3506630090C5CE /* Quick.framework */; };
+		41F62F1A1D3506950090C5CE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41F62F151D3506630090C5CE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41F62F1B1D3506960090C5CE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41F62F161D3506630090C5CE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41F62F1E1D3506AB0090C5CE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F62F1C1D3506AB0090C5CE /* Nimble.framework */; };
+		41F62F1F1D3506AB0090C5CE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F62F1D1D3506AB0090C5CE /* Quick.framework */; };
+		41F62F211D3506C80090C5CE /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41F62F1C1D3506AB0090C5CE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41F62F221D3506C80090C5CE /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41F62F1D1D3506AB0090C5CE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBB55ABD1C8F80020050DDA9 /* RxSwiftAddons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB55AB21C8F80020050DDA9 /* RxSwiftAddons.framework */; };
 		BBB55ADE1C8F88F20050DDA9 /* RxSwiftAddons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB55AD41C8F88F20050DDA9 /* RxSwiftAddons.framework */; };
 		BBB55B081C8F8CBC0050DDA9 /* RxSwiftAddons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB55AFE1C8F8CBB0050DDA9 /* RxSwiftAddons.framework */; };
@@ -66,6 +75,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41F62F191D35068C0090C5CE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41F62F1A1D3506950090C5CE /* Nimble.framework in CopyFiles */,
+				41F62F1B1D3506960090C5CE /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F62F201D3506AF0090C5CE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41F62F211D3506C80090C5CE /* Nimble.framework in CopyFiles */,
+				41F62F221D3506C80090C5CE /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +116,11 @@
 		41A869651D340F6E00F6F2A7 /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/Mac/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
 		41A8696C1D34105000F6F2A7 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/Mac/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSwiftAddons.h; sourceTree = "<group>"; };
+		41F62F131D34FB320090C5CE /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		41F62F151D3506630090C5CE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		41F62F161D3506630090C5CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		41F62F1C1D3506AB0090C5CE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		41F62F1D1D3506AB0090C5CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		BBB55AB21C8F80020050DDA9 /* RxSwiftAddons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwiftAddons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB55AB71C8F80020050DDA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBB55ABC1C8F80020050DDA9 /* RxSwiftAddons-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwiftAddons-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB55ABD1C8F80020050DDA9 /* RxSwiftAddons.framework in Frameworks */,
+				41F62F171D3506630090C5CE /* Nimble.framework in Frameworks */,
+				41F62F181D3506630090C5CE /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB55ADE1C8F88F20050DDA9 /* RxSwiftAddons.framework in Frameworks */,
+				41F62F1E1D3506AB0090C5CE /* Nimble.framework in Frameworks */,
+				41F62F1F1D3506AB0090C5CE /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +225,8 @@
 		41A8695E1D340E8C00F6F2A7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				41F62F151D3506630090C5CE /* Nimble.framework */,
+				41F62F161D3506630090C5CE /* Quick.framework */,
 				41A869621D340F1200F6F2A7 /* RxSwift.framework */,
 				41A8695B1D340E6F00F6F2A7 /* RxCocoa.framework */,
 			);
@@ -194,6 +236,8 @@
 		41A8695F1D340E9E00F6F2A7 /* OSX */ = {
 			isa = PBXGroup;
 			children = (
+				41F62F1C1D3506AB0090C5CE /* Nimble.framework */,
+				41F62F1D1D3506AB0090C5CE /* Quick.framework */,
 				41A8694F1D340E1300F6F2A7 /* RxSwift.framework */,
 				41A869591D340E5A00F6F2A7 /* RxCocoa.framework */,
 				41A8696C1D34105000F6F2A7 /* RxSwift.framework.dSYM */,
@@ -242,6 +286,27 @@
 			path = OSX;
 			sourceTree = "<group>";
 		};
+		41F62F231D3508560090C5CE /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		41F62F241D3508600090C5CE /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		41F62F251D3508870090C5CE /* iOS-watchOS-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "iOS-watchOS-tvOS";
+			sourceTree = "<group>";
+		};
 		BBB55AA81C8F80020050DDA9 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +317,7 @@
 				41986B381D34779E000476A9 /* postBuild.sh */,
 				41A869461D340C4400F6F2A7 /* .gitignore */,
 				41A869451D340B9600F6F2A7 /* Cartfile */,
+				41F62F131D34FB320090C5CE /* Cartfile.private */,
 				BBB55AB71C8F80020050DDA9 /* Info.plist */,
 				BBB55B1D1C8F9E850050DDA9 /* LICENCE.md */,
 				BBB55B1E1C8F9E920050DDA9 /* README.md */,
@@ -278,8 +344,11 @@
 			isa = PBXGroup;
 			children = (
 				41A8696E1D34255700F6F2A7 /* Common */,
+				41F62F251D3508870090C5CE /* iOS-watchOS-tvOS */,
 				41A869701D34256900F6F2A7 /* OSX */,
 				41A8696F1D34256400F6F2A7 /* iOS */,
+				41F62F231D3508560090C5CE /* watchOS */,
+				41F62F241D3508600090C5CE /* tvOS */,
 				41A869711D342B1F00F6F2A7 /* RxSwiftAddons.h */,
 			);
 			path = Sources;
@@ -358,6 +427,7 @@
 				BBB55AB81C8F80020050DDA9 /* Sources */,
 				BBB55AB91C8F80020050DDA9 /* Frameworks */,
 				BBB55ABA1C8F80020050DDA9 /* Resources */,
+				41F62F191D35068C0090C5CE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -369,9 +439,9 @@
 			productReference = BBB55ABC1C8F80020050DDA9 /* RxSwiftAddons-Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BBB55AD31C8F88F20050DDA9 /* OS X */ = {
+		BBB55AD31C8F88F20050DDA9 /* OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBB55AE51C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OS X" */;
+			buildConfigurationList = BBB55AE51C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OSX" */;
 			buildPhases = (
 				BBB55ACF1C8F88F20050DDA9 /* Sources */,
 				BBB55AD01C8F88F20050DDA9 /* Frameworks */,
@@ -384,25 +454,26 @@
 			);
 			dependencies = (
 			);
-			name = "OS X";
+			name = OSX;
 			productName = RxSwiftAddons;
 			productReference = BBB55AD41C8F88F20050DDA9 /* RxSwiftAddons.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BBB55ADC1C8F88F20050DDA9 /* OS X Tests */ = {
+		BBB55ADC1C8F88F20050DDA9 /* OSX Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBB55AE81C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OS X Tests" */;
+			buildConfigurationList = BBB55AE81C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OSX Tests" */;
 			buildPhases = (
 				BBB55AD91C8F88F20050DDA9 /* Sources */,
 				BBB55ADA1C8F88F20050DDA9 /* Frameworks */,
 				BBB55ADB1C8F88F20050DDA9 /* Resources */,
+				41F62F201D3506AF0090C5CE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BBB55AE01C8F88F20050DDA9 /* PBXTargetDependency */,
 			);
-			name = "OS X Tests";
+			name = "OSX Tests";
 			productName = RxSwiftAddonsTests;
 			productReference = BBB55ADD1C8F88F20050DDA9 /* RxSwiftAddons-Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -511,11 +582,11 @@
 			projectRoot = "";
 			targets = (
 				BBB55AB11C8F80020050DDA9 /* iOS */,
-				BBB55AD31C8F88F20050DDA9 /* OS X */,
+				BBB55AD31C8F88F20050DDA9 /* OSX */,
 				BBB55AF01C8F8BE00050DDA9 /* watchOS */,
 				BBB55AFD1C8F8CBB0050DDA9 /* tvOS */,
 				BBB55ABB1C8F80020050DDA9 /* iOS Tests */,
-				BBB55ADC1C8F88F20050DDA9 /* OS X Tests */,
+				BBB55ADC1C8F88F20050DDA9 /* OSX Tests */,
 				BBB55B061C8F8CBB0050DDA9 /* tvOS Tests */,
 			);
 		};
@@ -526,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F62F141D34FB320090C5CE /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +810,7 @@
 		};
 		BBB55AE01C8F88F20050DDA9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BBB55AD31C8F88F20050DDA9 /* OS X */;
+			target = BBB55AD31C8F88F20050DDA9 /* OSX */;
 			targetProxy = BBB55ADF1C8F88F20050DDA9 /* PBXContainerItemProxy */;
 		};
 		BBB55B0A1C8F8CBC0050DDA9 /* PBXTargetDependency */ = {
@@ -886,6 +958,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_BASE).Tests";
@@ -898,6 +974,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_BASE).Tests";
@@ -956,6 +1036,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_BASE).Tests";
@@ -969,6 +1053,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_BASE).Tests";
@@ -1117,7 +1205,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBB55AE51C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OS X" */ = {
+		BBB55AE51C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBB55AE61C8F88F20050DDA9 /* Debug */,
@@ -1126,7 +1214,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBB55AE81C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OS X Tests" */ = {
+		BBB55AE81C8F88F20050DDA9 /* Build configuration list for PBXNativeTarget "OSX Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBB55AE91C8F88F20050DDA9 /* Debug */,
