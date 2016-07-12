@@ -1,6 +1,7 @@
 #Throws warnings for TODO: and FIXME: comments
 TAGS="TODO:|FIXME:"
-find "${SRCROOT}/Sources" \( -name "*.h" -or -name "*.m" -or -name "*.swift" \) -print0 | xargs -0 egrep -s --with-filename --line-number --only-matching "($TAGS).*\$" | perl -p -e "s/($TAGS)/ warning: \$1/"
+ERRORTAG="ERROR:"
+find "${SRCROOT}/Sources" \( -name "*.h" -or -name "*.m" -or -name "*.swift" \) -print0 | xargs -0 egrep -s --with-filename --line-number --only-matching "($TAGS).*\$|($ERRORTAG).*\$" | perl -p -e "s/($TAGS)/ warning: \$1/" | perl -p -e "s/($ERRORTAG)/ error: \$1/"
 
 #Set podspec values based on xcode project values
 PODSPEC="$SRCROOT/RxSwiftAddons.podspec"
@@ -38,4 +39,10 @@ if [ -n "$VERSION" ]; then
 MATCHSTRING="s.version          = "
 REPLACESTRING="s.version          = \"$VERSION\""
 sed -i '' -e "s/$MATCHSTRING.*/$REPLACESTRING/g" "$PODSPEC"
+fi
+
+#Remind to reflect project structure changes to disk before committing
+if git diff --name-only | grep .xcodeproj > /dev/null; then
+printf 'warning: You modified the project structure, make sure to reflect those changes to the disk folder structure. You can do it easily with synx. Find more at: https://github.com/venmo/synx.\n'
+exit 0
 fi
